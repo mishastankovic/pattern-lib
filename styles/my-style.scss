@@ -1,0 +1,47 @@
+// Custom.scss
+@import "../styles/my-variables";
+
+// Option A: Include all of bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Option B: Include parts of Bootstrap
+
+/*
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/code";
+@import "../node_modules/bootstrap/scss/grid";
+*/
+
+h1, h2, h3, h4 {
+  color: $sro-primary;
+}
+
+h5, h6, p {
+  color: $sro-secondary-darkest;
+}
+
+.lead-paragraph {
+  font-size: $font-size-base * 1.25;
+}
+
+a {
+  text-decoration: underline;
+
+}
+
+.btn-primary {
+  @include button-variant($sro-primary, $sro-primary, $sro-primary-light, $sro-focus-border-color, $sro-primary-darkest, $sro-focus-border-color);
+}
+
+.btn-secondary {
+  @include button-variant($sro-secondary, $sro-secondary, $sro-secondary-light, $sro-focus-border-color, $sro-secondary-darkest, $sro-focus-border-color);
+}
+

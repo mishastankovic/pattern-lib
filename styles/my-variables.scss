@@ -1,0 +1,81 @@
+//---------------------
+// Colours
+//------------------------
+
+// Primary
+$sro-primary: #004C97;
+$sro-primary-light: #0069D9;
+$sro-primary-lightest: #3b95d8;
+$sro-primary-darker: #122E51;
+$sro-primary-darkest: #071D3A;
+$sro-primary-base: #212121;
+
+
+// Secondary
+$sro-secondary: #6C757D;
+$sro-secondary-dark: #5A6268;;
+$sro-secondary-darkest: #585858;
+$sro-secondary-light: #888888;
+$sro-secondary-lightest: #CCCCCC;
+
+// Tertiary
+$sro-red: #B71F37;
+$sro-red-dark: #841627;
+$sro-red-light: #CD2026;
+$sro-red-lighter: #E5404A;
+$sro-red-lightest: #FF5A63;
+
+// Background
+$sro-gray-dark: #323A45;
+$sro-gray: #5B616B;
+$sro-gray-light: #AEB0B5;
+$sro-gray-lighter: #D6D7D9;
+$sro-gray-lightest: #F1F1F1;
+$sro-gray-warm-dark: #494440;
+$sro-gray-warm-light: #E4E2E0;
+$sro-gray-cool-light: #DCE4EF;
+$sro-white: #FFFFFF;
+
+// Special State
+$sro-focus-border-color: #3ed4cf;
+$sro-visited-color: #4C2C92;
+$sro-warning-color: #CD2026;
+$sro-success-color: #78BE1F;
+
+
+// Override bootstrap colours
+$primary:  $sro-primary;
+$secondary: $sro-secondary;
+$info: $sro-primary-lightest;
+
+
+//----------------------------
+//  Fonts
+//----------------------------
+
+$font-family-lft-etica:       "LFT Etica", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-base:            $font-family-lft-etica;
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25);
+$font-size-sm:                ($font-size-base * .875);
+
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-bold:            700;
+
+$line-height-base:            1.5;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 1.5;
+$h3-font-size:                $font-size-base * 1.25;
+$h4-font-size:                $font-size-base * 1.1;
+$h5-font-size:                $font-size-base * 0.9735;
+$h6-font-size:                $font-size-base * 0.8125;
+
+$headings-font-weight:        $font-weight-bold;
+$headings-line-height:        1.3;
+
+$btn-focus-width:             2px;
+$btn-font-weight:             $font-weight-bold;
+
+

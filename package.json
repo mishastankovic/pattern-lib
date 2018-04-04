@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap4-test",
+  "version": "1.0.0",
+  "description": "Bootstrap 4 test project",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.8.3",
+    "popper.js": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "compile": "node-sass --include-path styles styles/my-style.scss styles/my-style.css"
+  },
+  "author": "Misha Stankovic",
+  "license": "ISC"
+}
