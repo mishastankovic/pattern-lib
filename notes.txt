@@ -1,2 +1,3 @@
 Frontify: https://company-134148.frontify.com/document/233484 (sro email)
 InVision: https://projects.invisionapp.com/share/B9GLBW3EQPG#/screens (live email)
+Bootstrap style: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
