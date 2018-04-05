@@ -1,0 +1,4 @@
+- Create side menu
+- Separate content into sections / pages
+- Add comments
+

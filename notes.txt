@@ -4,3 +4,7 @@ Bootstrap style: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.m
 RawGit: https://rawgit.com/
         https://cdn.rawgit.com/mishastankovic/pattern-lib/e23aef33/styles/my-style.css - production
         https://rawgit.com/mishastankovic/pattern-lib/master/styles/my-style.css - development
+Frontify style guide:
+    background colour #841627
+    Name:  SRO UI Library - A style guide for building awesome experiences
+
