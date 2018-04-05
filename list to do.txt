@@ -1,4 +1,8 @@
+- Compare with Cam's inVision list
 - Create side menu
 - Separate content into sections / pages
 - Add comments
-
+- Fix the style for select boxes
+- Add colors instead of text colors
+- Deploy to development server
+- Consider adding more elements from the list
