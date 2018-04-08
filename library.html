@@ -43,6 +43,12 @@
             <a class="nav-link" id="v-pills-pagination-tab" data-toggle="pill" href="#v-pills-pagination" role="tab" aria-controls="v-pills-pagination" aria-selected="false">
                 Pagination
             </a>
+            <a class="nav-link" id="v-pills-search-tab" data-toggle="pill" href="#v-pills-search" role="tab" aria-controls="v-pills-search" aria-selected="false">
+                Search Bar
+            </a>
+            <a class="nav-link" id="v-pills-file-tab" data-toggle="pill" href="#v-pills-file" role="tab" aria-controls="v-pills-file" aria-selected="false">
+                File Browser
+            </a>
         </div>
         <div class="tab-content flex-column ml-3 mt-4 col-10" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -190,62 +196,72 @@
                 <div class="container ml-4">
                     <h2>Form</h2>
                     <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="form-group mt-4 mb-4">
+                            <h5>INPUT FIELDS</h5>
+                            <hr>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">@</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+
+                        <div class="form-group mt-4 mb-4">
+                            <h5>CHECKBOXES</h5>
+                            <hr>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                            </div>
+                            <div class="custom-control custom-checkbox mt-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" disabled>
+                                <label class="custom-control-label" for="customCheck2">Disabled</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">$</span>
-                                </div>
-                                <input type="text" id="inputGroup1" class="form-control" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">.00</span>
-                                </div>
+                        <div class="container mt-4"></div>
+
+                        <div class="form-group mt-4 mb-4">
+                            <h5>RADIOS</h5>
+                            <hr>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <select class="custom-select mt-2">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <div class="panel mt-2">
-                                <select class="custom-select" multiple>
+                            <h5>DROPDOWN</h5>
+                            <hr>
+                            <div class="form-group">
+                                <label class="form-check-label" for="select-single">Single select</label>
+                                <select id="select-single" class="custom-select  custome-select-lg mb-3">
                                     <option selected>Open this select menu</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group mt-2">
+                                <label class="form-check-label" for="select-multiple">Multi select</label>
+                                <select class="custom-select" id="select-multiple" multiple>
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -281,9 +297,9 @@
             </div>
             <div class="tab-pane fade" id="v-pills-tables" role="tabpanel" aria-labelledby="v-pills-tables-tab">
                 <div class="container ml-4">
-                    <h2>Tables</h2>
+                    <h5>Bordered table</h5>
                     <table class="table table-bordered">
-                        <thead class="thead-dark">
+                        <thead class="sro-bordered-thead">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">First</th>
@@ -314,8 +330,9 @@
                     </table>
 
 
+                    <h5>Borderless table</h5>
                     <table class="table">
-                        <thead class="thead-light">
+                        <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">First</th>
@@ -459,7 +476,26 @@
                         </ul>
                     </nav>
                 </div>
-
+            </div>
+            <div class="tab-pane fade" id="v-pills-search" role="tabpanel" aria-labelledby="v-pills-search-tab">
+                <div class="container ml-4">
+                    <h2>Search Bar</h2>
+                    <nav class="navbar navbar-light bg-light">
+                        <form class="form-inline">
+                            <input class="form-control rounded-left" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-primary rounded-right" type="submit">Search</button>
+                        </form>
+                    </nav>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-file" role="tabpanel" aria-labelledby="v-pills-file-tab">
+                <div class="container ml-4">
+                    <h2>File Browser</h2>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -467,10 +503,10 @@
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- 
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()

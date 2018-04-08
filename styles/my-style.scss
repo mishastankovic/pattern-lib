@@ -45,3 +45,6 @@ a {
   @include button-variant($sro-secondary, $sro-secondary, $sro-secondary-light, $sro-focus-border-color, $sro-secondary-darkest, $sro-focus-border-color);
 }
 
+.sro-bordered-thead {
+  background-color: $sro-gray-lightest;
+}

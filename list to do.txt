@@ -7,19 +7,25 @@
         - Add disabled checkbox
         - Change background color of selected checkbox
     - Add radio buttons
+
 - Tables
     - Provide border and borderless tables
     - Adjust styles (line width, background
-- Add form templates
-    - Name
-    - Sign In
-    - Reset password
-    - Mailing address
-    - Date of birth
-- Search bar
-- Accordion
-- Side navigation
-- Typography spacing
+
+- Colors
+    - Create the layout as in inVision
+
+- Add
+    - Form templates
+        - Name
+        - Sign In
+        - Reset password
+        - Mailing address
+        - Date of birth
+    - Search bar
+    - Accordion
+    - Side navigation
+    - Typography spacing
 
 
 - Compare with Cam's inVision list
