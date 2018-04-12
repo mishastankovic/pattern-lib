@@ -38,13 +38,13 @@ a {
 }
 
 .btn-primary {
-  @include button-variant($sro-primary, $sro-primary, $sro-primary-light, $sro-focus-border-color, $sro-primary-darkest, $sro-focus-border-color);
+  @include button-variant($sro-primary, $sro-primary, $sro-primary-light);
 }
 
 .btn-secondary {
-  @include button-variant($sro-secondary, $sro-secondary, $sro-secondary-light, $sro-focus-border-color, $sro-secondary-darkest, $sro-focus-border-color);
+  @include button-variant($sro-secondary, $sro-secondary, $sro-secondary-light);
 }
 
 .sro-bordered-thead {
-  background-color: $sro-gray-lightest;
+  background-color: $sro-grey-lightest;
 }
