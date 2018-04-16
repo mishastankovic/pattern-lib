@@ -48,3 +48,18 @@ a {
 .sro-bordered-thead {
   background-color: $sro-grey-lightest;
 }
+
+.form-inline {
+	.btn {
+		border-radius: 0px;
+	}
+	.form-control {
+		border-radius: 0px
+	}
+}
+
+.custom-checkbox, .custom-radio {
+	.custom-control-label::before {
+		border: 1px solid $sro-checkbox-outline-color;
+	}
+}
