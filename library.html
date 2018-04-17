@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="styles/my-style.css" >
+    <link rel="stylesheet" href="/node_modules/bootstrap-toggle/css/bootstrap-toggle.min.css" >
 </head>
 
 <body>
@@ -49,8 +50,11 @@
             <a class="nav-link" id="v-pills-file-tab" data-toggle="pill" href="#v-pills-file" role="tab" aria-controls="v-pills-file" aria-selected="false">
                 File Browser
             </a>
+            <a class="nav-link" id="v-pills-yourdetails-tab" data-toggle="pill" href="#v-pills-yourdetails" role="tab" aria-controls="v-pills-yourdetails" aria-selected="false">
+                Form example - Your details
+            </a>
         </div>
-        <div class="tab-content flex-column ml-3 mt-4 col-10" id="v-pills-tabContent">
+        <div class="tab-content flex-column ml-3 mt-4 col-8" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="container ml-5">
                		<h5 class="mt-4">PRIMARY</h5>
@@ -263,6 +267,15 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <h5>TOGGLE</h5>
+                            <hr>
+                            <div class="form-group">
+								<input id="#toggle-one" type="checkbox" checked data-toggle="toggle">
+								<input id="#toggle-two"   type="checkbox" data-toggle="toggle">
+							</div>
+                        </div>
+                        
                     </form>
                 </div>
             </div>
@@ -497,7 +510,34 @@
                     </div>
                 </div>
             </div>
-
+            <div class="tab-pane fade" id="v-pills-yourdetails" role="tabpanel" aria-labelledby="v-pills-yourdetails-tab">
+                <div class="container ml-4 col-6">
+                    <h2 class="mb-4">Your details</h2>
+                    <div class="form-group mb-4">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control mb-2" id="firstName" aria-describedby="firstNameHelp">
+                        <label for="middleName">Middle name <span class="optional">- optional</span></label>
+                        <input type="text" class="form-control mb-2" id="middleName" aria-describedby="middleNameHelp">
+                        <label for="firstName">Last name</label>
+                        <input type="text" class="form-control mb-2" id="lastName" aria-describedby="lastNameHelp">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="phoneNumber">Phone number</label>
+                        <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="confirmEmail">Confirm email</label>
+                        <input type="email" class="form-control" id="confirmEmail">
+                    </div>
+                    <div class="form-group mb-4">
+	                    <button type="button" class="btn btn-primary">Register your details</button>
+					</div>                    
+               </div>
         </div>
     </div>
 </div>
@@ -506,9 +546,11 @@
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
     <script>
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
+            $('#toggle-one').bootstrapToggle();
         })
     </script>
 
