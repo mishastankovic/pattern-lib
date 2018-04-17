@@ -2450,7 +2450,7 @@ tbody.collapse.show {
     pointer-events: none;
     content: "";
     user-select: none;
-    background-color: #dee2e6; }
+    background-color: white; }
   .custom-control-label::after {
     position: absolute;
     top: 0.25rem;
@@ -2464,7 +2464,7 @@ tbody.collapse.show {
     background-size: 50% 50%; }
 
 .custom-checkbox .custom-control-label::before {
-  border-radius: 0.25rem; }
+  border-radius: 2px; }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #004C97; }
@@ -6112,3 +6112,16 @@ a {
 
 .sro-bordered-thead {
   background-color: #F1F1F1; }
+
+.form-inline .btn {
+  border-radius: 0px; }
+
+.form-inline .form-control {
+  border-radius: 0px; }
+
+.custom-checkbox .custom-control-label::before, .custom-radio .custom-control-label::before {
+  border: 1px solid #CED4DA; }
+
+.optional {
+  font-style: italic;
+  color: #888888; }
