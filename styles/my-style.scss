@@ -3,6 +3,7 @@
 
 // Option A: Include all of bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
+//@import "../node_modules/bootstrap-toggle/css/bootstrap-toggle.min.css";
 
 // Option B: Include parts of Bootstrap
 
@@ -62,4 +63,10 @@ a {
 	.custom-control-label::before {
 		border: 1px solid $sro-checkbox-outline-color;
 	}
+}
+
+
+.optional {
+	font-style: italic;
+	color: $sro-secondary-light;
 }
