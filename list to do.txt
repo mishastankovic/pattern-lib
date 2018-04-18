@@ -1,7 +1,19 @@
-Missing components:
-
-- Progress / Spinner
-- Autocomplete
-- Date input / calendar
-
-- Mobile style
+- Missing components:
+	- Progress / Spinner
+	- Autocomplete
+	- Date input / calendar
+	- Navigation (Navbar, navigation buttons layout)
+	- Application layout (page layout) for both desktop and mobile
+	- Read only (input field and text)
+	- Link to field help
+	
+- Changes to existing components:
+	- Error display
+	
+- Prepare for tomorrow's hand over	
+	- Import html to Frontify
+	- Implement composites
+	- Rest password
+	- Date field
+	- 
+		
