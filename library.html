@@ -598,34 +598,49 @@
             </div>
             <div class="tab-pane fade" id="v-pills-yourdetails" role="tabpanel" aria-labelledby="v-pills-yourdetails-tab">
             	<form class="needs-validation" novalidate>
-	                <div class="container ml-4 col-6">
-	                    <h2 class="mb-4">Your details</h2>
-	                    <div class="form-group mb-4">
-	                        <label for="firstName">First name</label>
-	                        <input type="text" class="form-control mb-2" id="firstName" aria-describedby="firstNameHelp">
-	                        <label for="middleName">Middle name <span class="optional">- optional</span></label>
-	                        <input type="text" class="form-control mb-2" id="middleName" aria-describedby="middleNameHelp">
-	                        <label for="firstName">Last name</label>
-	                        <input type="text" class="form-control mb-2" id="lastName" aria-describedby="lastNameHelp">
-	                    </div>
-	                    <div class="form-group mb-4">
-	                        <label for="phoneNumber">Phone number</label>
-	                        <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp">
-	                    </div>
-	                    <div class="form-group mb-4">
-	                        <label for="yourDetailsEmail">Email address</label>
-	                        <input type="email" class="form-control" id="yourDetailsEmail" aria-describedby="emailHelp" placeholder="Enter email">
-	                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-	                    </div>
-	                    <div class="form-group mb-4">
-	                        <label for="confirmEmail">Confirm email</label>
-	                        <input type="email" class="form-control" id="confirmEmail">
-	                    </div>
-	                    <div class="form-group mb-4">
-		                    <button type="submit" class="btn btn-primary">Register your details</button>
-						</div>                    
-	               </div>
-				</form>	               
+                    <div class="container ml-4 col-6">
+                        <h2 class="mb-4">Your details</h2>
+                        <div class="form-group mb-4">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control mb-2" id="firstName" aria-describedby="firstNameHelp" required>
+                            <div class="invalid-feedback">
+                                First name is required.
+                            </div>
+                            <label for="middleName">Middle name <span class="optional">- optional</span></label>
+                            <input type="text" class="form-control mb-2" id="middleName" aria-describedby="middleNameHelp">
+                            <label for="firstName">Last name</label>
+                            <input type="text" class="form-control mb-2" id="lastName" aria-describedby="lastNameHelp" required>
+                            <div class="invalid-feedback">
+                                Last name is required.
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="phoneNumber">Phone number</label>
+                            <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp" required>
+                            <div class="invalid-feedback">
+                                Phone number is required.
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="confirmEmail">Confirm email</label>
+                            <input type="email" class="form-control" id="confirmEmail" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <button type="submit" class="btn btn-primary">Register your details</button>
+                        </div>
+                    </div>
+                </form>
         </div>
     </div>
 </div>
@@ -639,7 +654,21 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
             $('#toggle-one').bootstrapToggle();
-        })
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        });
     </script>
 
 </body>
