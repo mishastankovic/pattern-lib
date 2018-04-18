@@ -46,8 +46,20 @@ a {
   @include button-variant($sro-secondary, $sro-secondary, $sro-secondary-light);
 }
 
-.sro-bordered-thead {
-  background-color: $sro-grey-lightest;
+.table-bordered {
+	.sro-bordered-thead {
+	  th {
+		background-color: $sro-grey-lightest;
+		border-bottom: 1px solid $table-border-color;
+	  }
+	}
+}
+
+.table-borderless {
+	  thead th {
+		border-bottom: 1px solid $table-border-color;
+		border-top: none;
+	  }
 }
 
 .form-inline {
