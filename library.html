@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="styles/my-style.css" >
-    <link rel="stylesheet" href="/node_modules/bootstrap-toggle/css/bootstrap-toggle.min.css" >
+    <link rel="stylesheet" href="./node_modules/bootstrap-toggle/css/bootstrap-toggle.min.css" >
 </head>
 
 <body>
@@ -35,9 +35,6 @@
             <a class="nav-link" id="v-pills-tabs-tab" data-toggle="pill" href="#v-pills-tabs" role="tab" aria-controls="v-pills-tabs" aria-selected="false">
                 Tabs
             </a>
-            <a class="nav-link" id="v-pills-modal-tab" data-toggle="pill" href="#v-pills-modal" role="tab" aria-controls="v-pills-modal" aria-selected="false">
-                Modal
-            </a>
             <a class="nav-link" id="v-pills-tooltips-tab" data-toggle="pill" href="#v-pills-tooltips" role="tab" aria-controls="v-pills-tooltips" aria-selected="false">
                 Tooltips
             </a>
@@ -49,6 +46,12 @@
             </a>
             <a class="nav-link" id="v-pills-file-tab" data-toggle="pill" href="#v-pills-file" role="tab" aria-controls="v-pills-file" aria-selected="false">
                 File Browser
+            </a>
+            <a class="nav-link" id="v-pills-accordion-tab" data-toggle="pill" href="#v-pills-accordion" role="tab" aria-controls="v-pills-accordion" aria-selected="false">
+                Accordion
+            </a>
+            <a class="nav-link" id="v-pills-modal-tab" data-toggle="pill" href="#v-pills-modal" role="tab" aria-controls="v-pills-modal" aria-selected="false">
+                Modal
             </a>
             <a class="nav-link" id="v-pills-yourdetails-tab" data-toggle="pill" href="#v-pills-yourdetails" role="tab" aria-controls="v-pills-yourdetails" aria-selected="false">
                 Form example - Your details
@@ -204,8 +207,8 @@
                             <h5>INPUT FIELDS</h5>
                             <hr>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <label for="email1">Email address</label>
+                                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
@@ -311,7 +314,7 @@
             <div class="tab-pane fade" id="v-pills-tables" role="tabpanel" aria-labelledby="v-pills-tables-tab">
                 <div class="container ml-4">
                     <h5>Bordered table</h5>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered mb-5">
                         <thead class="sro-bordered-thead">
                         <tr>
                             <th scope="col">#</th>
@@ -343,8 +346,8 @@
                     </table>
 
 
-                    <h5>Borderless table</h5>
-                    <table class="table">
+                    <h5 class="mt-4">Borderless table</h5>
+                    <table class="table table-borderless">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -510,43 +513,97 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="v-pills-yourdetails" role="tabpanel" aria-labelledby="v-pills-yourdetails-tab">
-                <div class="container ml-4 col-6">
-                    <h2 class="mb-4">Your details</h2>
-                    <div class="form-group mb-4">
-                        <label for="firstName">First name</label>
-                        <input type="text" class="form-control mb-2" id="firstName" aria-describedby="firstNameHelp">
-                        <label for="middleName">Middle name <span class="optional">- optional</span></label>
-                        <input type="text" class="form-control mb-2" id="middleName" aria-describedby="middleNameHelp">
-                        <label for="firstName">Last name</label>
-                        <input type="text" class="form-control mb-2" id="lastName" aria-describedby="lastNameHelp">
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="phoneNumber">Phone number</label>
-                        <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp">
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="confirmEmail">Confirm email</label>
-                        <input type="email" class="form-control" id="confirmEmail">
-                    </div>
-                    <div class="form-group mb-4">
-	                    <button type="button" class="btn btn-primary">Register your details</button>
+            <div class="tab-pane fade" id="v-pills-accordion" role="tabpanel" aria-labelledby="v-pills-accordion-tab">
+                <div class="container ml-4">
+                    <h2>Accordion</h2>
+					<div id="accordion">
+					  <div class="card">
+					    <div class="card-header" id="headingOne">
+					      <h5 class="mb-0 clearfix">
+					        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">					      
+					          Collapsible Group Item #1
+					        </button>
+					        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">					      
+					          +
+					        </button>
+					  	   </h5>
+					    </div>					
+					    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+					      <div class="card-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <div class="card-header" id="headingTwo">
+					      <h5 class="mb-0">
+					        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					          Collapsible Group Item #2
+					        </button>
+					      </h5>
+					    </div>
+					    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+					      <div class="card-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <div class="card-header" id="headingThree">
+					      <h5 class="mb-0">
+					        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					          Collapsible Group Item #3
+					        </button>
+					      </h5>
+					    </div>
+					    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+					      <div class="card-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
 					</div>                    
-               </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-yourdetails" role="tabpanel" aria-labelledby="v-pills-yourdetails-tab">
+            	<form class="needs-validation" novalidate>
+	                <div class="container ml-4 col-6">
+	                    <h2 class="mb-4">Your details</h2>
+	                    <div class="form-group mb-4">
+	                        <label for="firstName">First name</label>
+	                        <input type="text" class="form-control mb-2" id="firstName" aria-describedby="firstNameHelp">
+	                        <label for="middleName">Middle name <span class="optional">- optional</span></label>
+	                        <input type="text" class="form-control mb-2" id="middleName" aria-describedby="middleNameHelp">
+	                        <label for="firstName">Last name</label>
+	                        <input type="text" class="form-control mb-2" id="lastName" aria-describedby="lastNameHelp">
+	                    </div>
+	                    <div class="form-group mb-4">
+	                        <label for="phoneNumber">Phone number</label>
+	                        <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp">
+	                    </div>
+	                    <div class="form-group mb-4">
+	                        <label for="yourDetailsEmail">Email address</label>
+	                        <input type="email" class="form-control" id="yourDetailsEmail" aria-describedby="emailHelp" placeholder="Enter email">
+	                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	                    </div>
+	                    <div class="form-group mb-4">
+	                        <label for="confirmEmail">Confirm email</label>
+	                        <input type="email" class="form-control" id="confirmEmail">
+	                    </div>
+	                    <div class="form-group mb-4">
+		                    <button type="submit" class="btn btn-primary">Register your details</button>
+						</div>                    
+	               </div>
+				</form>	               
         </div>
     </div>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/node_modules/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
