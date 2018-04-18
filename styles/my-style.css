@@ -1047,12 +1047,12 @@ pre {
   .table td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6; }
+    border-top: 1px solid #AEB0B5; }
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6; }
+    border-bottom: 2px solid #AEB0B5; }
   .table tbody + tbody {
-    border-top: 2px solid #dee2e6; }
+    border-top: 2px solid #AEB0B5; }
   .table .table {
     background-color: #fff; }
 
@@ -1061,10 +1061,10 @@ pre {
   padding: 0.3rem; }
 
 .table-bordered {
-  border: 1px solid #dee2e6; }
+  border: 1px solid #AEB0B5; }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #dee2e6; }
+    border: 1px solid #AEB0B5; }
   .table-bordered thead th,
   .table-bordered thead td {
     border-bottom-width: 2px; }
@@ -1182,7 +1182,7 @@ pre {
 .table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
-  border-color: #dee2e6; }
+  border-color: #AEB0B5; }
 
 .table-dark {
   color: #fff;
@@ -6110,8 +6110,13 @@ a {
     .show > .btn-secondary.dropdown-toggle:focus {
       box-shadow: 0 0 0 2px rgba(108, 117, 125, 0.5); }
 
-.sro-bordered-thead {
-  background-color: #F1F1F1; }
+.table-bordered .sro-bordered-thead th {
+  background-color: #F1F1F1;
+  border-bottom: 1px solid #AEB0B5; }
+
+.table-borderless thead th {
+  border-bottom: 1px solid #AEB0B5;
+  border-top: none; }
 
 .form-inline .btn {
   border-radius: 0px; }
