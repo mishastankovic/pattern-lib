@@ -62,6 +62,12 @@ a {
 	  }
 }
 
+.table-striped {
+	thead th {
+		border-bottom: 1px solid $table-border-color;
+	}
+}
+
 .form-inline {
 	.btn {
 		border-radius: 0px;
