@@ -6206,5 +6206,8 @@ a {
   color: white; }
 
 .centralised {
-  margin: 0 auto; 
-}
+  margin: 0 auto; }
+
+label .description {
+  margin-bottom: 0.25rem;
+  margin-top: 0; }
