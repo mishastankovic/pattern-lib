@@ -6204,3 +6204,7 @@ a {
 .sro-text-special-focus {
   background-color: #3E94CF;
   color: white; }
+
+.centralised {
+  margin: 0 auto; 
+}
