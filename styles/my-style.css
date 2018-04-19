@@ -6133,3 +6133,74 @@ a {
 .optional {
   font-style: italic;
   color: #888888; }
+
+.text-box {
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 0.8rem; }
+
+.sro-text-primary {
+  background-color: #004C97;
+  color: white; }
+
+.sro-text-primary-light {
+  background-color: #0069D9;
+  color: white; }
+
+.sro-text-primary-darker {
+  background-color: #071D3A;
+  color: white; }
+
+.sro-text-primary-base {
+  background-color: #212121;
+  color: white; }
+
+.sro-text-secondary {
+  background-color: #6C757D;
+  color: white; }
+
+.sro-text-secondary-dark {
+  background-color: #5A6268;
+  color: white; }
+
+.sro-text-secondary-darkest {
+  background-color: #585858;
+  color: white; }
+
+.sro-text-secondary-lightest {
+  background-color: #CCCCCC;
+  color: black; }
+
+.sro-text-tertiary {
+  background-color: #B71F37;
+  color: white; }
+
+.sro-text-tertiary-dark {
+  background-color: #841627;
+  color: white; }
+
+.sro-text-tertiary-light {
+  background-color: #CB2F38;
+  color: white; }
+
+.sro-text-tertiary-lighter {
+  background-color: #E5404A;
+  color: white; }
+
+.sro-text-special-success {
+  background-color: #78BE1F;
+  color: black; }
+
+.sro-text-special-warning {
+  background-color: #CD2026;
+  color: white; }
+
+.sro-text-special-visited {
+  background-color: #4C2C92;
+  color: white; }
+
+.sro-text-special-focus {
+  background-color: #3E94CF;
+  color: white; }
