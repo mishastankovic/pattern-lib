@@ -3,7 +3,6 @@
 
 // Option A: Include all of bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "../node_modules/bootstrap-toggle/css/bootstrap2-toggle";
 
 // Option B: Include parts of Bootstrap
 
@@ -181,6 +180,8 @@ label .description {
   margin-bottom: 0.25rem;
   margin-top: 0;
 }
+
+@import "../node_modules/bootstrap-toggle/css/bootstrap2-toggle";
 
 /* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4*/
 .toggle-off {
