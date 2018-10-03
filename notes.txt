@@ -1,10 +1,159 @@
-Frontify: https://company-134148.frontify.com/document/233484 (sro email)
-InVision: https://projects.invisionapp.com/share/B9GLBW3EQPG#/screens (live email)
-Bootstrap style: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
-RawGit: https://rawgit.com/
-        https://cdn.rawgit.com/mishastankovic/pattern-lib/e23aef33/styles/my-style.css - production
-        https://rawgit.com/mishastankovic/pattern-lib/master/styles/my-style.css - development
-Frontify style guide:
-    background colour #841627
-    Name:  SRO UI Library - A style guide for building awesome experiences
+- WebSphere public key store example: https://burgatshowblog.wordpress.com/2017/06/08/reading-private-key-from-websphere-application-servers-keystore
+- Spring Security OATH2 / JWT, Spring Boot examples:
+	- https://www.baeldung.com/authentication-against-a-third-party-service
+	- https://www.baeldung.com/spring-security-oauth-jwt
+	- https://dzone.com/articles/secure-spring-rest-with-spring-security-and-oauth2
+	- https://www.baeldung.com/spring-security-oauth2-refresh-token-angular-js
+	- https://www.baeldung.com/logout-spring-security-oauth
+	- https://spring.io/guides/topicals/spring-security-architecture/
+	- https://dzone.com/articles/secure-spring-rest-with-spring-security-and-oauth2
+	- https://dzone.com/articles/cache-oauth-2-in-spring-with-redis
+	- https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/
+	- https://alvarosanchez.github.io/grails-spring-security-rest/1.5.4/docs/guide/tokenStorage.html
+	
 
+- Endpoints
+	- /oauth/authorize
+	- /oauth/token
+	- /oauth/check_token
+	- /oauth/confirm_access (post approval for grants)
+	- oauth/token_key
+- Objections setup:
+	- application.properties
+		security.oauth2.resource.filter-order=3
+		
+	- Dependencies:
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+		
+	- The following classes may be reusable:
+		- SecurityConfiguration
+		- TokenEnhancerImpl
+		- UserDetailsImpl
+		- UserDetailsServiceImpl
+		- NotAuthorizedException
+		- AuthorizationService, AuthorizationServiceImpl
+		- AuthorizationDAO, AuthorizationDAOImpl
+	
+- Lookup the AusPost example for spring-boot starter and security starter
+
+- API
+	- Request token (Login)
+		- POST /oauth/token
+		- request: { username: nnn, password: sss, grant_type: "password", client_id: "<application-cliewnt-code (e.g. autopaycode, objectionscode etc)>" }
+		- response:
+			
+	- Refresh token
+		- POST /oauth/token
+			- request: {grant_type: "refresh_token"}
+	
+	- Logout
+		- DELETE /oauth/token
+		- This request returns empty cookie "refreshToken"- effectively clears this cookie.
+		  This is done in CustomPostZuulFilter
+		- On the client side 
+			- Removes the following cookies:
+				- access_token
+				- validity
+				- remember
+				
+- Authorisation server components
+	- CosFilter
+	- CustomTokenEnhancer implements TokenEnhancer
+		- TokenEnhancerChain is set in configuration and this is where CustomTokenEnhancer is added.
+		- The items in the array implement TokenEnhancer and are called in the order of the list.
+	
+	- AuthenticationManager
+		- provides single method authenticate(Authentication)
+		- Bean created in WebSecurityConfig
+		- Spring Boot's AuthenticationMangerConfiguration is conditional on missing AuthenticationManager, AuthenticationProvider, and UserDetailsService beans
+	
+	- AuthenticationManagerBuilder
+		- Builds AuthenticationManager
+		- Allows for easily building in memory authentication, LDAP authentication, JDBC based authentication, adding UserDetailsService, and adding AuthenticationProvider's.
+		  This configuration is performed in WebSecurityConfig
+	
+	- OAuth2AuthorizationServerConfig with JDBC store for both clients and tokens
+		- TokenStore
+			- JdbcTokenStore 
+			- Schme implied in the queries within this class
+		- DefaultTokenServices
+			- Implements:
+				- AuthorizationServerTokenServices
+					- createAccessToken
+					- refereshAccessToken
+					- getAccessToken
+				- ResourceServerTokenServices
+					- loadAuthentication
+					- readAccessToken
+				- ConsumerTokenServices
+					- revokeToken
+		- configures AuthorizationServerEndpointsConfigurer
+			- This is where TokenStore, TokenEnhancer and AuthenticationManager are hooked
+		
+	- OAuth2AuthorizationServerConfigInMemory with JDBC store for tokens only
+	
+	- OAuth2AuthorizationServerConfigJwt with Jwt and no persistence
+		- JwtTokenStore
+		- JwtAccessTokenConverter
+			- Converts between Authentication and JWT token
+			- Configured in AuthorizationServerEndpointsConfigurer
+			
+- API components			
+	- TokenController
+		- /oauth/token/revokeById/{tokenId}
+		- /tokens
+		- /tokens/revokeRefreshToken/{tokenId:.*}
+	- RevokeTokenEndpoint
+		- DELETE /oauth/token
+			- Authorization: Bearer <tokenId>
+		
+		
+	
+- curl scripts
+	- curl -i -X POST -d username=user -d password=userPass http://localhost:8081/spring-security-oauth-server/login
+	- The following command was successfully used with Jwt token store:
+	  curl -v -X POST -H "Authorization: Basic Zm9vQ2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=" -F grant_type=password -F username=john -F password=123 -F client_id=fooClientIdPassword http://localhost:8081/spring-security-oauth-server/oauth/token
+	
+- JDBC client example:
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) 
+      throws Exception {
+        clients.jdbc(dataSource())
+          .withClient("sampleClientId")
+          .authorizedGrantTypes("implicit")
+          .scopes("read")
+          .autoApprove(true)
+          .and()
+          .withClient("clientIdPassword")
+          .secret("secret")
+          .authorizedGrantTypes(
+            "password","authorization_code", "refresh_token")
+          .scopes("read");
+    }	
+
+- Example of remote token service configuratin on the resource server
+	@Primary
+	@Bean
+	public RemoteTokenServices tokenService() {
+		RemoteTokenServices tokenService = new RemoteTokenServices();
+		tokenService.setCheckTokenEndpointUrl(
+		  "http://localhost:8080/spring-security-oauth-server/oauth/check_token");
+		tokenService.setClientId("fooClientIdPassword");
+		tokenService.setClientSecret("secret");
+		return tokenService;
+	}
+	
+- JNDI data source on Tomcat:
+	https://www.journaldev.com/2597/spring-datasource-jndi-with-tomcat-example	
