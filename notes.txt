@@ -1,3 +1,7 @@
+
+- REST custom authentication 
+  https://www.baeldung.com/authentication-against-a-third-party-service
+
 - WebSphere public key store example: https://burgatshowblog.wordpress.com/2017/06/08/reading-private-key-from-websphere-application-servers-keystore
 - Spring Security OATH2 / JWT, Spring Boot examples:
 	- https://www.baeldung.com/authentication-against-a-third-party-service
